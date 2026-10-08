@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title">
+  <title id="title">Portada estilo carreras arcade</title>
+  <rect width="640" height="420" fill="#38bdf8"/>
+  <path d="M0 290 C150 230 245 360 390 290 C500 238 565 270 640 220 L640 420 L0 420 Z" fill="#22c55e"/>
+  <path d="M95 420 C180 290 270 260 350 420 Z" fill="#111827"/>
+  <path d="M300 420 C370 300 450 260 545 420 Z" fill="#1f2937"/>
+  <rect x="245" y="205" width="150" height="75" rx="22" fill="#f97316"/>
+  <circle cx="280" cy="285" r="34" fill="#111827"/>
+  <circle cx="370" cy="285" r="34" fill="#111827"/>
+  <text x="55" y="92" fill="#ffffff" font-family="Arial, sans-serif" font-size="42" font-weight="900">MARIO KART</text>
+  <text x="55" y="132" fill="#fef3c7" font-family="Arial, sans-serif" font-size="30" font-weight="800">World</text>
+</svg>
