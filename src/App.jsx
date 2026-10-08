@@ -1,0 +1,74 @@
+import { useEffect, useMemo, useState } from 'react'
+import ContactForm from './components/ContactForm.jsx'
+import Footer from './components/Footer.jsx'
+import GameCatalog from './components/GameCatalog.jsx'
+import GameManager from './components/GameManager.jsx'
+import Header from './components/Header.jsx'
+import Hero from './components/Hero.jsx'
+import { initialGames } from './data/initialGames.js'
+import { loadGames, saveGames } from './utils/storage.js'
+import { normalizeText } from './utils/format.js'
+
+function App() {
+  const [games, setGames] = useState(() => loadGames(initialGames))
+  const [category, setCategory] = useState('Todos')
+  const [message, setMessage] = useState('Catalogo listo para explorar.')
+
+  useEffect(() => {
+    saveGames(games)
+  }, [games])
+
+  const visibleProducts = useMemo(() => {
+    return games.filter((game) => {
+      const matchesCategory = category === 'Todos' || game.category === category
+      const searchableText = normalizeText(`${game.name} ${game.category} ${game.description}`)
+
+      return matchesCategory && searchableText
+    })
+  }, [category, games])
+
+  function handleCategoryChange(nextCategory) {
+    setCategory(nextCategory)
+    setMessage(`Filtro aplicado: ${nextCategory}.`)
+  }
+
+  function handleAddGame(game) {
+    setGames((currentGames) => [...currentGames, game])
+    setCategory('Todos')
+    setMessage(`${game.name} fue agregado al catalogo.`)
+  }
+
+  function handleDeleteGame(gameId) {
+    const deletedGame = games.find((game) => game.id === gameId)
+    setGames((currentGames) => currentGames.filter((game) => game.id !== gameId))
+    setMessage(deletedGame ? `${deletedGame.name} fue eliminado del catalogo.` : 'Videojuego eliminado.')
+  }
+
+  function handleResetGames() {
+    setGames(initialGames)
+    setCategory('Todos')
+    setMessage('Catalogo restaurado con los videojuegos iniciales.')
+  }
+
+  return (
+    <>
+      <Header gamesCount={games.length} />
+      <Hero />
+      <main>
+        <GameCatalog
+          games={games}
+          visibleGames={visibleProducts}
+          category={category}
+          message={message}
+          onCategoryChange={handleCategoryChange}
+          onDeleteGame={handleDeleteGame}
+        />
+        <GameManager onAddGame={handleAddGame} onResetGames={handleResetGames} />
+        <ContactForm />
+      </main>
+      <Footer />
+    </>
+  )
+}
+
+export default App
