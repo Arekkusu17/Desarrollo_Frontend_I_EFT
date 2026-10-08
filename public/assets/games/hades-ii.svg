@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title">
+  <title id="title">Portada estilo accion mitologica</title>
+  <rect width="640" height="420" fill="#111827"/>
+  <path d="M320 72 C405 150 400 248 320 348 C240 248 235 150 320 72 Z" fill="#7f1d1d"/>
+  <path d="M320 115 C372 178 368 245 320 305 C272 245 268 178 320 115 Z" fill="#f97316"/>
+  <path d="M320 162 C348 204 346 245 320 281 C294 245 292 204 320 162 Z" fill="#fef3c7"/>
+  <path d="M150 332 C240 286 400 286 490 332" stroke="#f59e0b" stroke-width="12" stroke-linecap="round"/>
+  <text x="64" y="88" fill="#fef3c7" font-family="Arial, sans-serif" font-size="54" font-weight="900">HADES II</text>
+  <text x="70" y="370" fill="#f97316" font-family="Arial, sans-serif" font-size="28" font-weight="700">Accion roguelike</text>
+</svg>
