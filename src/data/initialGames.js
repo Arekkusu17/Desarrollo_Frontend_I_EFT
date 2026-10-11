@@ -7,7 +7,7 @@ export const initialGames = [
     category: 'Aventura',
     price: 59990,
     description: 'Aventura de exploracion y puzzles para jugadores que disfrutan descubrir secretos.',
-    image: assetPath('assets/games/zelda-echoes.svg'),
+    image: assetPath('assets/games/zelda-echoes.webp'),
   },
   {
     id: 'game-fc-26',
@@ -15,7 +15,7 @@ export const initialGames = [
     category: 'Deportes',
     price: 54990,
     description: 'Simulador deportivo con modos competitivos, ligas y torneos para jugar en linea.',
-    image: assetPath('assets/games/fc-26.svg'),
+    image: assetPath('assets/games/fc-26.webp'),
   },
   {
     id: 'game-spider-man-2',
@@ -23,7 +23,7 @@ export const initialGames = [
     category: 'Accion',
     price: 64990,
     description: 'Juego de accion con combate agil, mundo abierto y misiones cinematograficas.',
-    image: assetPath('assets/games/spider-man-2.svg'),
+    image: assetPath('assets/games/spider-man-2.webp'),
   },
   {
     id: 'game-mario-kart-world',
@@ -31,7 +31,7 @@ export const initialGames = [
     category: 'Carreras',
     price: 49990,
     description: 'Carreras arcade para competir en pistas coloridas con objetos y multijugador local.',
-    image: assetPath('assets/games/mario-kart-world.svg'),
+    image: assetPath('assets/games/mario-kart-world.webp'),
   },
   {
     id: 'game-minecraft',
@@ -39,7 +39,7 @@ export const initialGames = [
     category: 'Creativo',
     price: 29990,
     description: 'Construccion, exploracion y supervivencia en mundos generados para crear sin limites.',
-    image: assetPath('assets/games/minecraft-deluxe.svg'),
+    image: assetPath('assets/games/minecraft-deluxe.webp'),
   },
   {
     id: 'game-hades-ii',
@@ -47,6 +47,6 @@ export const initialGames = [
     category: 'Accion',
     price: 34990,
     description: 'Roguelike de accion con progresion, mitologia y combates rapidos de alta precision.',
-    image: assetPath('assets/games/hades-ii.svg'),
+    image: assetPath('assets/games/hades-ii.webp'),
   },
 ]
