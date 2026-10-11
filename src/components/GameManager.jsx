@@ -1,13 +1,4 @@
 import { useState } from 'react'
-import { assetPath } from '../utils/assets.js'
-
-const imageOptions = [
-  { label: 'Aventura', value: assetPath('assets/games/zelda-echoes.webp') },
-  { label: 'Accion', value: assetPath('assets/games/spider-man-2.webp') },
-  { label: 'Carreras', value: assetPath('assets/games/mario-kart-world.webp') },
-  { label: 'Creativo', value: assetPath('assets/games/minecraft-deluxe.webp') },
-  { label: 'Deportes', value: assetPath('assets/games/fc-26.webp') },
-]
 
 function GameManager({ onAddGame, onResetGames }) {
   const [formError, setFormError] = useState('')
@@ -19,7 +10,7 @@ function GameManager({ onAddGame, onResetGames }) {
     const category = form.get('category')
     const price = Number(form.get('price'))
     const description = form.get('description').trim()
-    const image = form.get('image')
+    const image = form.get('image').trim()
 
     if (!name || !category || !price || !description || !image) {
       setFormError('Completa todos los campos para agregar el videojuego.')
@@ -28,6 +19,11 @@ function GameManager({ onAddGame, onResetGames }) {
 
     if (price < 1000) {
       setFormError('El precio debe ser mayor o igual a $1.000.')
+      return
+    }
+
+    if (!/^https?:\/\/.+/i.test(image)) {
+      setFormError('Ingresa una URL de imagen valida que comience con http o https.')
       return
     }
 
@@ -81,13 +77,15 @@ function GameManager({ onAddGame, onResetGames }) {
                   <input className="form-control" id="price" name="price" type="number" min="1000" step="1000" required />
                 </div>
                 <div className="col-md-6">
-                  <label className="form-label" htmlFor="image">Imagen</label>
-                  <select className="form-select" id="image" name="image" required>
-                    <option value="">Selecciona portada</option>
-                    {imageOptions.map((option) => (
-                      <option key={option.label} value={option.value}>{option.label}</option>
-                    ))}
-                  </select>
+                  <label className="form-label" htmlFor="image">URL de imagen</label>
+                  <input
+                    className="form-control"
+                    id="image"
+                    name="image"
+                    type="url"
+                    placeholder="https://ejemplo.com/portada.webp"
+                    required
+                  />
                 </div>
                 <div className="col-12">
                   <label className="form-label" htmlFor="description">Descripcion</label>
