@@ -163,6 +163,15 @@ textarea:focus-visible {
   background-color: #f8fbfb;
 }
 
+.catalog-toolbar {
+  display: grid;
+  gap: 1rem;
+}
+
+.search-form {
+  max-width: 760px;
+}
+
 .btn-brand {
   --bs-btn-color: #fff;
   --bs-btn-bg: var(--brand);
