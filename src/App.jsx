@@ -12,6 +12,7 @@ import { normalizeText } from './utils/format.js'
 function App() {
   const [games, setGames] = useState(() => loadGames(initialGames))
   const [category, setCategory] = useState('Todos')
+  const [search, setSearch] = useState('')
   const [message, setMessage] = useState('Catalogo listo para explorar.')
 
   useEffect(() => {
@@ -19,22 +20,36 @@ function App() {
   }, [games])
 
   const visibleProducts = useMemo(() => {
+    const normalizedSearch = normalizeText(search)
+
     return games.filter((game) => {
       const matchesCategory = category === 'Todos' || game.category === category
       const searchableText = normalizeText(`${game.name} ${game.category} ${game.description}`)
+      const matchesSearch = !normalizedSearch || searchableText.includes(normalizedSearch)
 
-      return matchesCategory && searchableText
+      return matchesCategory && matchesSearch
     })
-  }, [category, games])
+  }, [category, games, search])
 
   function handleCategoryChange(nextCategory) {
     setCategory(nextCategory)
     setMessage(`Filtro aplicado: ${nextCategory}.`)
   }
 
+  function handleSearchChange(nextSearch) {
+    setSearch(nextSearch)
+    setMessage(nextSearch ? `Busqueda aplicada: ${nextSearch}.` : 'Busqueda limpiada.')
+  }
+
+  function handleClearSearch() {
+    setSearch('')
+    setMessage('Busqueda limpiada.')
+  }
+
   function handleAddGame(game) {
     setGames((currentGames) => [...currentGames, game])
     setCategory('Todos')
+    setSearch('')
     setMessage(`${game.name} fue agregado al catalogo.`)
   }
 
@@ -47,6 +62,7 @@ function App() {
   function handleResetGames() {
     setGames(initialGames)
     setCategory('Todos')
+    setSearch('')
     setMessage('Catalogo restaurado con los videojuegos iniciales.')
   }
 
@@ -59,8 +75,11 @@ function App() {
           games={games}
           visibleGames={visibleProducts}
           category={category}
+          search={search}
           message={message}
           onCategoryChange={handleCategoryChange}
+          onSearchChange={handleSearchChange}
+          onClearSearch={handleClearSearch}
           onDeleteGame={handleDeleteGame}
         />
         <GameManager onAddGame={handleAddGame} onResetGames={handleResetGames} />
