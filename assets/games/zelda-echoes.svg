@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title">
+  <title id="title">Portada estilo aventura</title>
+  <rect width="640" height="420" fill="#d9f99d"/>
+  <path d="M0 310 C120 250 200 350 320 285 C450 215 520 305 640 245 L640 420 L0 420 Z" fill="#166534"/>
+  <path d="M0 250 C120 190 220 260 340 205 C470 145 540 210 640 175 L640 420 L0 420 Z" fill="#65a30d"/>
+  <circle cx="500" cy="84" r="48" fill="#facc15"/>
+  <path d="M310 95 L365 235 L310 205 L255 235 Z" fill="#f8fafc" stroke="#14532d" stroke-width="14" stroke-linejoin="round"/>
+  <text x="50" y="92" fill="#14532d" font-family="Arial, sans-serif" font-size="42" font-weight="800">ZELDA</text>
+  <text x="50" y="136" fill="#14532d" font-family="Arial, sans-serif" font-size="30" font-weight="700">Echoes</text>
+</svg>
