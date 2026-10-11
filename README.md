@@ -1,34 +1,22 @@
 # PlayVerse Store
 
-Evaluacion Final Transversal de Desarrollo Frontend I. El proyecto implementa una tienda online de videojuegos con React, Bootstrap 5, filtrado por categoria, administracion del catalogo y persistencia con localStorage.
+Tienda online de videojuegos con catalogo interactivo, administracion de productos y formulario de contacto.
 
 ## Descripcion
 
-PlayVerse Store presenta un catalogo de videojuegos organizado en tarjetas con imagen, nombre, categoria, precio y descripcion. La interfaz permite filtrar por categoria, agregar nuevos videojuegos, eliminar registros existentes y mantener los cambios despues de recargar la pagina gracias a localStorage.
-
-## Tecnologias utilizadas
-
-- React
-- Vite
-- Bootstrap 5
-- CSS3
-- JavaScript
-- localStorage
-- GitHub Pages
+PlayVerse Store presenta un catalogo de videojuegos organizado en tarjetas con imagen, nombre, categoria, precio y descripcion. La interfaz permite filtrar por categoria, agregar nuevos videojuegos, eliminar registros existentes y mantener los cambios despues de recargar la pagina.
 
 ## Funcionalidades principales
 
-- Componentes funcionales separados por responsabilidad.
-- Catalogo inicial de videojuegos cargado desde un modulo local.
-- Filtro por categoria mediante estado de React.
+- Catalogo inicial de videojuegos.
+- Filtro por categoria.
 - Tarjetas dinamicas para mostrar videojuegos.
 - Formulario para agregar videojuegos al catalogo.
 - Eliminacion de videojuegos desde cada tarjeta.
-- Persistencia de cambios con localStorage.
 - Restauracion del catalogo inicial.
 - Formulario de contacto con validacion de nombre, email y mensaje.
-- Diseno responsivo con Bootstrap 5 y CSS personalizado.
-- Rutas de assets compatibles con despliegue en GitHub Pages.
+- Diseno adaptable para escritorio y dispositivos moviles.
+- Imagenes estaticas de videojuegos en formato WebP.
 
 ## Estructura del proyecto
 
@@ -42,12 +30,8 @@ Desarrollo_Frontend_I_EFT/
 │   ├── components/
 │   ├── data/
 │   ├── utils/
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── styles.css
-├── index.html
-├── package.json
-├── vite.config.js
+│   └── archivos principales
+├── configuracion del proyecto
 └── README.md
 ```
 
@@ -65,7 +49,7 @@ Ejecuta el servidor local:
 npm run dev
 ```
 
-Genera una version de produccion:
+Genera una version lista para publicar:
 
 ```bash
 npm run build
@@ -77,21 +61,9 @@ npm run build
 - `develop`: integracion de funcionalidades.
 - `feature/...`: ramas por implementacion.
 
-## Publicacion
+## Enlaces
 
-El proyecto esta preparado para GitHub Pages con:
-
-- `base: '/Desarrollo_Frontend_I_EFT/'` en `vite.config.js`
-- script `deploy` con `gh-pages -d dist`
-
-Para publicar:
-
-```bash
-npm run build
-npm run deploy
-```
-
-Repositorio GitHub:
+Repositorio:
 
 ```text
 https://github.com/Arekkusu17/Desarrollo_Frontend_I_EFT
