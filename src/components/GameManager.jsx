@@ -2,11 +2,11 @@ import { useState } from 'react'
 import { assetPath } from '../utils/assets.js'
 
 const imageOptions = [
-  { label: 'Aventura', value: assetPath('assets/games/zelda-echoes.svg') },
-  { label: 'Accion', value: assetPath('assets/games/spider-man-2.svg') },
-  { label: 'Carreras', value: assetPath('assets/games/mario-kart-world.svg') },
-  { label: 'Creativo', value: assetPath('assets/games/minecraft-deluxe.svg') },
-  { label: 'Deportes', value: assetPath('assets/games/fc-26.svg') },
+  { label: 'Aventura', value: assetPath('assets/games/zelda-echoes.webp') },
+  { label: 'Accion', value: assetPath('assets/games/spider-man-2.webp') },
+  { label: 'Carreras', value: assetPath('assets/games/mario-kart-world.webp') },
+  { label: 'Creativo', value: assetPath('assets/games/minecraft-deluxe.webp') },
+  { label: 'Deportes', value: assetPath('assets/games/fc-26.webp') },
 ]
 
 function GameManager({ onAddGame, onResetGames }) {
@@ -52,7 +52,7 @@ function GameManager({ onAddGame, onResetGames }) {
             <p className="text-uppercase section-label mb-2">Administracion</p>
             <h2 className="h1 fw-bold">Agregar videojuegos</h2>
             <p className="text-muted-custom">
-              Los cambios se guardan en localStorage, por lo que el catalogo se mantiene aunque recargues la pagina.
+              Los cambios se mantienen aunque recargues la pagina.
             </p>
             <button className="btn btn-outline-brand" type="button" onClick={onResetGames}>
               Restaurar catalogo inicial

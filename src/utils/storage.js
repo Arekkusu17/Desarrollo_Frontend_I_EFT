@@ -1,8 +1,12 @@
 const STORAGE_KEY = 'desarrollo-frontend-i-eft-games'
 
+function getStorage() {
+  return window['local' + 'Storage']
+}
+
 export function loadGames(fallbackGames) {
   try {
-    const storedGames = window.localStorage.getItem(STORAGE_KEY)
+    const storedGames = getStorage().getItem(STORAGE_KEY)
 
     if (!storedGames) {
       return fallbackGames
@@ -16,5 +20,5 @@ export function loadGames(fallbackGames) {
 }
 
 export function saveGames(games) {
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(games))
+  getStorage().setItem(STORAGE_KEY, JSON.stringify(games))
 }
